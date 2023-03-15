@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { AppRoutes } from './pages'
-import { ThemeProvider } from '@mui/material'
-import { LithtTheme } from './shared/themes'
+import { AppRoutes } from './routes'
+import { AppThemeProvider } from './shared/context/'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <ThemeProvider theme={LithtTheme}>
+    <AppThemeProvider>
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
-    </ThemeProvider>
+    </AppThemeProvider>
   )
 }
 
